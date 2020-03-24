@@ -4,10 +4,6 @@ import router from './router'
 import store from './store'
 import vuetify from '@/plugins/vuetify' // path to vuetify export
 
-// todo Для визуализации использовать vuetify. !!
-// todo Отобразить/дать возможность изменять тестовые данные из vuex
-// todo Выложить приложение на git
-
 new Vue({
   router,
   store,

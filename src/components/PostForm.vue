@@ -2,15 +2,15 @@
     <v-card
         class="mx-auto post-form"
         max-width="500"
->
-    <v-container>
-        <form @submit.prevent="submit">
-            <v-text-field type="text" v-model="title" placeholder="title"/>
-            <v-text-field type="text" v-model="body" placeholder="body"/>
-            <v-btn type="submit">create post</v-btn>
-        </form>
-    </v-container>
-</v-card>
+    >
+        <v-container>
+            <form @submit.prevent="submit">
+                <v-text-field type="text" v-model="title" placeholder="title"/>
+                <v-text-field type="text" v-model="body" placeholder="body"/>
+                <v-btn type="submit">create post</v-btn>
+            </form>
+        </v-container>
+    </v-card>
 </template>
 
 <script>

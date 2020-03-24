@@ -4,7 +4,7 @@
         {{ todo.title }}
 
         <v-btn color="red" icon @click="deleteBtn">
-        <v-icon>mdi-cached</v-icon>
+        <v-icon>mdi-clear</v-icon>
         </v-btn>
     </li>
 </template>
@@ -13,8 +13,6 @@
     import { mapMutations } from "vuex";
 
     export default {
-
-
         name: "Todoitem",
         props: {
             todo: {
@@ -30,7 +28,6 @@
         },
         mounted() {
         }
-
     }
 </script>
 

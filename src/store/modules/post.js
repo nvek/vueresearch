@@ -17,6 +17,13 @@ export default {
             if (newPost.title && newPost.body) {
                 state.posts.unshift(newPost);
             }
+        },
+        deletePost(state, post) {
+            // находим пост
+            let index = state.posts.find(item => ((item.title === post.title) && (item.body === post.body)));
+            state.posts.splice(index, 1);
+            console.log(post);
+            console.log('хрен')
         }
     },
     state: {

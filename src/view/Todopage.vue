@@ -3,7 +3,7 @@
     width="500">
         <Todoform/>
         <todolist
-        v-bind:todos="allTodos"
+            v-bind:todos="allTodos"
         />
     </v-card>
 </template>
