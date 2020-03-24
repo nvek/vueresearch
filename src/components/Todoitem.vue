@@ -1,16 +1,23 @@
 <template>
-<!--    todo добавить кнопку удаления тудусписка-->
+    <!--    todo добавить кнопку удаления тудусписка-->
     <li>
-        {{ todo.title }}
+        <v-btn v-if="!todo.completed" color="green" icon @click="confirm">
+            <v-icon>mdi-check</v-icon>
+        </v-btn>
+
+        <span :style="todo.completed ? { textDecoration: 'line-through'}: {} ">
+            {{ todo.title }}
+        </span>
+
 
         <v-btn color="red" icon @click="deleteBtn">
-        <v-icon>mdi-clear</v-icon>
+            <v-icon>mdi-close</v-icon>
         </v-btn>
     </li>
 </template>
 
 <script>
-    import { mapMutations } from "vuex";
+    import {mapMutations} from "vuex";
 
     export default {
         name: "Todoitem",
@@ -21,9 +28,13 @@
             }
         },
         methods: {
-            ...mapMutations(['deleteTodo']),
+            ...mapMutations(['deleteTodo', 'confirmTodo']),
             deleteBtn() {
                 this.deleteTodo(this.todo.id)
+            },
+
+            confirm() {
+                this.confirmTodo(this.todo.id);
             }
         },
         mounted() {

@@ -21,7 +21,8 @@
             submit() {
                 this.createTodo({
                     title: this.title,
-                    id: Date.now()
+                    id: Date.now(),
+                    completed: false,
                     }
                 )
             }

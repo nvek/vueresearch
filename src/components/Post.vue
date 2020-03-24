@@ -4,7 +4,7 @@
             max-width="500"
     >
         <v-btn color="red" icon @click="deleteBtn" max-width="25px" max-height="25px">
-            <v-icon>mdi-home</v-icon>
+            <v-icon>mdi-delete</v-icon>
         </v-btn>
 
         <v-expansion-panels style="margin-bottom: 5px">
