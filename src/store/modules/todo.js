@@ -1,29 +1,16 @@
 export default {
-    actions: {
-
-    },
+    actions: {},
     mutations: {
         createTodo(state, newTodo) {
-            state.todos.unshift(newTodo);
-            console.log(state.todos);
+            if (newTodo.title)
+                state.todos.unshift(newTodo);
         },
         deleteTodo(state, currentTodoId) {
             state.todos = state.todos.filter(item => item.id !== currentTodoId)
         },
         confirmTodo(state, currentTodoId) {
-
-            state.todos.find(item => {
-                // console.log('|'+item.id  != currentTodoId+'|');
-                // console.log(item.id + ':' + currentTodoId);
-                //
-
-                //return item.title === title
-                 return item.id === currentTodoId;
-
-
-            }).completed = true;
+            state.todos.find(item => item.id === currentTodoId).completed = true;
         }
-
     },
     state: {
         todos: [
