@@ -1,32 +1,60 @@
-
-
 <template>
-    <div id="app">
-        <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-            <div class="container">
-                <router-link class="navbar-brand" to="/">Home</router-link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav">
+    <v-app id="app">
+        <v-navigation-drawer
+                v-model="drawer"
+                app
+        >
+            <v-list dense>
+                <v-list-item link to="/">
+                    <v-list-item-action>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
 
+                <v-list-item link to="/blog">
+                    <v-list-item-action>
+                        <v-icon>mdi-store</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Blog</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
 
-                        <li class="nav-item">
-                            <router-link class="nav-link" to="/blog">Blog</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" to="/todos">Todos</router-link>
-                        </li>
-                    </ul>
+                <v-list-item link to="/todos">
+                    <v-list-item-action>
+                        <v-icon>mdi-contact-mail</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Todos</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
 
-                </div>
-            </div>
-        </div>
-        <div style="padding-top: 80px">
-            <router-view/>
-        </div>
-    </div>
+            </v-list>
+        </v-navigation-drawer>
+
+        <v-app-bar
+                app
+                color="indigo"
+                dark
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title>Application</v-toolbar-title>
+        </v-app-bar>
+        <v-content>
+            <v-container>
+                <router-view></router-view>
+            </v-container>
+        </v-content>
+        <v-footer
+                color="indigo"
+                app
+        >
+            <span class="white--text">&copy; 2019</span>
+        </v-footer>
+    </v-app>
 
 </template>
 
@@ -35,10 +63,9 @@
 
     export default {
         name: 'App',
-        components: {
-        },
+        components: {},
         data: () => ({
-            //
+            drawer: null
         }),
     };
 </script>

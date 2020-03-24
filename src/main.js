@@ -8,8 +8,6 @@ import vuetify from '@/plugins/vuetify' // path to vuetify export
 // todo Отобразить/дать возможность изменять тестовые данные из vuex
 // todo Выложить приложение на git
 
-import "bootswatch/dist/cosmo/bootstrap.min.css";
-
 new Vue({
   router,
   store,

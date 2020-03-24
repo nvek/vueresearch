@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //import HelloWorld from '../components/HelloWorld'
-import Home from '../components/Home'
-import Blog from '../components/Blog'
-import Todopage from '../components/Todopage'
+import Home from '../view/Home'
+import Blog from '../view/Blog'
+import Todopage from '../view/Todopage'
 
 Vue.use(Router);
 

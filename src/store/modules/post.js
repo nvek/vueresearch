@@ -10,7 +10,6 @@ export default {
         }
     },
     mutations: {
-        // STATE МЕНЯЕТ ЧЕРЕЗ тут
         updatePosts(state, posts) {
             state.posts = posts;
         },
@@ -18,7 +17,6 @@ export default {
             if (newPost.title && newPost.body) {
                 state.posts.unshift(newPost);
             }
-            console.log(123);
         }
     },
     state: {

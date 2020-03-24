@@ -1,11 +1,16 @@
 <template>
-    <form @submit.prevent="submit">
-    <v-text-field type="text" v-model="title" placeholder="title"/>
-    <v-text-field type="text" v-model="body" placeholder="body"/>
-    <v-btn type="submit">create post</v-btn>
-    <hr>
-    </form>
-
+    <v-card
+        class="mx-auto post-form"
+        max-width="500"
+>
+    <v-container>
+        <form @submit.prevent="submit">
+            <v-text-field type="text" v-model="title" placeholder="title"/>
+            <v-text-field type="text" v-model="body" placeholder="body"/>
+            <v-btn type="submit">create post</v-btn>
+        </form>
+    </v-container>
+</v-card>
 </template>
 
 <script>
@@ -21,7 +26,6 @@
         methods: {
             ...mapMutations(['createPost']),
             submit() {
-                console.log('submit')
                 this.createPost({
                     title: this.title,
                     body: this.body,
@@ -34,10 +38,13 @@
 </script>
 
 <style scoped>
-input {
-    display: block;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-}
+    .post-form {
+        margin-bottom: 10px;
+    }
+    input {
+        display: block;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+    }
 </style>
